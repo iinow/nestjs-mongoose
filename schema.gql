@@ -13,15 +13,45 @@ type TestMemo {
   content: String!
 }
 
+type User {
+  """User uuid"""
+  uuid: String!
+
+  """User name"""
+  name: String!
+}
+
+type Post {
+  """Post id"""
+  id: Int!
+
+  """Post title"""
+  title: String!
+
+  """Post content"""
+  content: String!
+
+  """등록자"""
+  registerUser: User!
+}
+
 type Query {
   helloList: [Hello!]!
   hello(id: Int!): Hello!
+  user(id: Int!): User!
+  post(id: Int!): Post!
 }
 
 type Mutation {
   createHello(createHelloInput: CreateHelloInput!): Hello!
   updateHello(updateHelloInput: UpdateHelloInput!): Hello!
   removeHello(id: Int!): Hello!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+  createPost(createPostInput: CreatePostInput!): Post!
+  updatePost(updatePostInput: UpdatePostInput!): Post!
+  removePost(id: Int!): Post!
 }
 
 input CreateHelloInput {
@@ -30,6 +60,28 @@ input CreateHelloInput {
 }
 
 input UpdateHelloInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
+
+input CreatePostInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdatePostInput {
   """Example field (placeholder)"""
   exampleField: Int
   id: Int!
