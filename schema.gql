@@ -1,0 +1,36 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Hello {
+  """Example field (placeholder)"""
+  content: String!
+  findMemo: TestMemo!
+}
+
+type TestMemo {
+  """Example field (placeholder)"""
+  content: String!
+}
+
+type Query {
+  helloList: [Hello!]!
+  hello(id: Int!): Hello!
+}
+
+type Mutation {
+  createHello(createHelloInput: CreateHelloInput!): Hello!
+  updateHello(updateHelloInput: UpdateHelloInput!): Hello!
+  removeHello(id: Int!): Hello!
+}
+
+input CreateHelloInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateHelloInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
